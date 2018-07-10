@@ -1,7 +1,7 @@
 {
-  "name": "react-app-rewire-typescript",
-  "version": "2.0.2",
-  "description": "Add ts-loader to a react-app-rewired config.",
+  "name": "react-app-rewire-awesome-typescript",
+  "version": "0.0.1",
+  "description": "Add awesome-typescript-loader to a react-app-rewired config.",
   "main": "index.js",
   "files": ["index.js"],
   "scripts": {
@@ -14,31 +14,39 @@
   "repository": {
     "type": "git",
     "url":
-      "git+https://github.com/lwd-technology/react-app-rewire-typescript.git"
+      "git+https://github.com/infctr/react-app-rewire-awesome-typescript.git"
   },
-  "keywords": ["typescript", "ts-loader", "webpack", "react-app-rewired"],
+  "keywords": [
+    "typescript",
+    "awesome-typescript-loader",
+    "webpack",
+    "react-app-rewired"
+  ],
   "author": "Ian Copp <ian@wolflair.com>",
   "license": "MIT",
   "bugs": {
     "url":
-      "https://github.com/lwd-technology/react-app-rewire-typescript/issues"
+      "https://github.com/infctr/react-app-rewire-awesome-typescript/issues"
   },
   "homepage":
-    "https://github.com/lwd-technology/react-app-rewire-typescript#readme",
-  "devDependencies": {
-    "eslint": "^4.10.0",
-    "eslint-config-prettier": "^2.6.0",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-prettier": "^2.3.1",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "husky": "^0.14.3",
-    "lint-staged": "^4.3.0",
-    "prettier": "^1.7.1"
-  },
+    "https://github.com/infctr/react-app-rewire-awesome-typescript#readme",
   "dependencies": {
-    "ts-loader": "^3.1.1"
+    "awesome-typescript-loader": "^5.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.1.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.7"
+  },
+  "peerDependencies": {
+    "react-app-rewired": "latest"
   }
 }

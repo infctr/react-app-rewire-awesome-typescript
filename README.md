@@ -1,6 +1,17 @@
-# react-app-rewire-typescript
+# react-app-rewire-awesome-typescript
 
-Add [Typescript](https://github.com/microsoft/typescript) Webpack loading to a [`react-app-rewired`](https://github.com/timarney/react-app-rewired) config.
+Add [awesome-typescript-loader](https://github.com/s-panferov/awesome-typescript-loader) to a [react-app-rewired](https://github.com/timarney/react-app-rewired) config.
+
+A fork of [react-app-rewire-typescript](https://github.com/lwd-technology/react-app-rewire-typescript) by [@icopp](https://github.com/icopp)
+
+## ⚠️ NOT TESTED FOR PRODUCTION BUILDS
+
+## How it works
+
+- Tell Webpack the entry file doesn't have to a `.js` file, just any `index` file
+- Add a rule in Webpack config to parse `.ts|tsx` files with `awesome-typescript-loader` and Babel
+
+## Usage
 
 ```js
 /* config-overrides.js */
@@ -8,11 +19,13 @@ Add [Typescript](https://github.com/microsoft/typescript) Webpack loading to a [
 const rewireTypescript = require('react-app-rewire-typescript');
 
 module.exports = function override(config, env) {
-    // ...
-    config = rewireTypescript(config, env);
-    // ...
-    return config;
-}
+  // ...
+  config = rewireTypescript(config, env);
+  // ...
+  return config;
+};
 ```
 
-For running `.ts` test files, take a look at [`ts-jest`](https://github.com/kulshekhar/ts-jest). PRs to integrate `ts-jest` compatibility into this repo are welcome.
+## Options
+
+_TODO_
