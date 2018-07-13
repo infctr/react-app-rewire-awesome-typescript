@@ -50,7 +50,7 @@ const addBeforeRule = (rulesSource, ruleMatcher, value) => {
  * @param {any[]} config.module.rules
  * @param {string[]} config.entry
  */
-function rewireTypescript(config, env, typescriptLoaderOptions = {}) {
+function rewireTypescript(config, _, tsLoaderOptions = {}) {
   // Monkey patch react-scripts paths to use just `src` instead of
   // `src/index.js` specifically. Hopefully this can get removed at some point.
   // @see https://github.com/facebookincubator/create-react-app/issues/3052
@@ -76,19 +76,26 @@ function rewireTypescript(config, env, typescriptLoaderOptions = {}) {
 
   // Set up a Typescript rule.
   const babelLoader = getBabelLoader(config.module.rules);
-  const typescriptRules = {
-    test: /\.ts|tsx?$/,
+  const { useBabel } = tsLoaderOptions;
+  const tsBabelOptions = useBabel
+    ? { babelOptions: { ...babelLoader.options, babelrc: false } }
+    : {};
+
+  const tsRules = {
+    test: /\.(ts|tsx)$/,
+    include: paths.srcPaths,
+    exclude: [/[/\\\\]node_modules[/\\\\]/],
     use: [
-      { loader: babelLoader.loader, options: babelLoader.options },
+      !useBabel && { loader: babelLoader.loader, options: babelLoader.options },
       {
         loader: require.resolve('awesome-typescript-loader'),
-        options: typescriptLoaderOptions
+        options: { ...tsLoaderOptions, ...tsBabelOptions }
       }
-    ]
+    ].filter(Boolean)
   };
 
   // Add the Typescript rule before the file-loader rule.
-  addBeforeRule(config.module.rules, fileLoaderMatcher, typescriptRules);
+  addBeforeRule(config.module.rules, fileLoaderMatcher, tsRules);
 
   return config;
 }
