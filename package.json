@@ -31,8 +31,7 @@
   "homepage":
     "https://github.com/infctr/react-app-rewire-awesome-typescript#readme",
   "dependencies": {
-    "awesome-typescript-loader": "^5.2.0",
-    "lodash": "^4.17.10"
+    "awesome-typescript-loader": "^5.2.0"
   },
   "devDependencies": {
     "eslint": "^5.1.0",
