@@ -2,16 +2,18 @@
 
 Add [awesome-typescript-loader](https://github.com/s-panferov/awesome-typescript-loader) to a [react-app-rewired](https://github.com/timarney/react-app-rewired) config.
 
-A fork of [react-app-rewire-typescript](https://github.com/lwd-technology/react-app-rewire-typescript) by [@icopp](https://github.com/icopp)
-
-### ⚠️ NOT TESTED FOR PRODUCTION BUILDS ⚠️
-
 ## How it works
 
 - Tell Webpack the entry file doesn't have to be a `.js` file, just any `index` file
 - Add a rule in Webpack config to parse `.ts|tsx` files with `awesome-typescript-loader` and Babel
 
+## Prerequisites
+
+`awesome-typescript-loader` requires Webpack 4 hooks so be sure to use it with `react-scripts@next` and `react-app-rewired@2.0.0`.
+
 ## Installation
+
+### ⚠️ NOT TESTED FOR PRODUCTION BUILDS ⚠️
 
 with npm
 
