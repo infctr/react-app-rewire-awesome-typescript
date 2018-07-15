@@ -1,6 +1,6 @@
 {
   "name": "react-app-rewire-awesome-typescript",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Add awesome-typescript-loader to a react-app-rewired config.",
   "main": "index.js",
   "files": ["index.js"],
