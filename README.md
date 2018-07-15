@@ -13,8 +13,6 @@ Add [awesome-typescript-loader](https://github.com/s-panferov/awesome-typescript
 
 ## Installation
 
-### ⚠️ NOT TESTED FOR PRODUCTION BUILDS ⚠️
-
 with npm
 
 ```
@@ -29,19 +27,37 @@ yarn add -D react-app-rewire-awesome-typescript
 
 ## Usage
 
+### ⚠️ NOT TESTED FOR PRODUCTION BUILDS ⚠️
+
 ```js
 /* config-overrides.js */
 
 const rewireTypescript = require('react-app-rewire-awesome-typescript');
 
 module.exports = function override(config, env) {
-  // ...
-  config = rewireTypescript(config, env);
+  // some rewires
+  config = rewireTypescript(config, env, options);
   // ...
   return config;
 };
 ```
 
+or using `compose`
+
+```js
+const { compose } = require('react-app-rewired');
+
+module.exports = compose(
+  // some rewires
+  rewireTypescript(options)
+  // ...
+);
+```
+
 ## Options
 
-_TODO_
+### _useBabel (boolean) (default=false)_
+
+Pass `{ useBabel: true }` to invoke Babel for transpilation. Current config from Webpack will be used.
+
+Refer for other options to `awesome-typescript-loader` [github page](https://github.com/s-panferov/awesome-typescript-loader#loader-options).

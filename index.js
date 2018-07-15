@@ -23,7 +23,7 @@ const insertRules = (rules, tsRules) => {
   list.splice(index, 0, tsRules);
 };
 
-function rewireTypescript(config, _, tsLoaderOptions = {}) {
+const rewireTs = (config, _, tsLoaderOptions = {}) => {
   // Monkey patch react-scripts paths to use just `src` instead of
   // `src/index.js` specifically. Hopefully this can get removed at some point.
   // @see https://github.com/facebookincubator/create-react-app/issues/3052
@@ -74,6 +74,11 @@ function rewireTypescript(config, _, tsLoaderOptions = {}) {
   insertRules(config.module.rules, tsRules);
 
   return config;
-}
+};
 
-module.exports = rewireTypescript;
+const rewire = (...args) =>
+  args.length === 1
+    ? (config, env) => rewireTs(config, env, ...args)
+    : rewireTs(...args);
+
+module.exports = rewire;
