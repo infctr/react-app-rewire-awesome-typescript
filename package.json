@@ -30,6 +30,12 @@
   },
   "homepage":
     "https://github.com/infctr/react-app-rewire-awesome-typescript#readme",
+  "prettier": {
+    "printWidth": 80,
+    "eslintIntegration": true,
+    "semi": true,
+    "singleQuote": true
+  },
   "dependencies": {
     "awesome-typescript-loader": "^5.2.0"
   },
